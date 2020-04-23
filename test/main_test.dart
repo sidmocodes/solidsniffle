@@ -5,13 +5,15 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:solidsniffle/main.dart';
+import 'package:solidsniffle/pages/ConversationPageList.dart';
 
 void main() {
-  testWidgets('Checking if hello world shows up', (WidgetTester tester) async {
+  testWidgets('Main UI Test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(solidsniffle());
-    expect(find.text('Hello World!'), findsOneWidget);
+
+    expect(find.byType(ConversationPageList),findsOneWidget);
+
   });
 }
